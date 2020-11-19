@@ -8,3 +8,18 @@ before_install:
 
 script:
   - docker run -e CI=true bigdatawonders/docker-react npm run test -- --coverage
+
+deploy:
+  provider: elastickbeanstalk
+  region: eu-central-1
+  name: "dockerr"
+  env: "Dockerr-env"
+  bucket_name: "elasticbeanstalk-eu-central-1-353545775944"
+  bucket_path: "dockerr"
+  on:
+    branch: master
+  access_key_id: $access_key_id
+  secret_access_key:
+    secure: "$secret_access_key"
+
+
