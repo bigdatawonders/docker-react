@@ -11,8 +11,8 @@ script:
   - docker run -e CI=true bigdatawonders/docker-react npm run test
 
 deploy:
-  provider: elastickbeanstalk
-  region: eu-central-1
+  provider: elasticbeanstalk
+  region: "eu-central-1"
   name: "dockerr"
   env: "Dockerr-env"
   bucket_name: "elasticbeanstalk-eu-central-1-353545775944"
